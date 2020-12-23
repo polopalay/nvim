@@ -1,7 +1,3 @@
-"for f in split(glob('~/.config/nvim/configs/*.vim'), '\n')
-   "exe 'source' f
-"endfor
-
 call plug#begin()
 Plug 'wincent/terminus'
 Plug 'morhetz/gruvbox'  " Theme for vim
@@ -13,7 +9,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Change color for tree folder
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' } " Format code for vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete code for vim, if error enter 'python3 -m pip install --user --upgrade pynvim' and 'python2 -m pip install --user --upgrade pynvim'
-Plug 'honza/vim-snippets'   " Snippets for some language
+"Plug 'honza/vim-snippets'   " Snippets for some language
 Plug 'sheerun/vim-polyglot' " Color skin for language	
 Plug 'w0rp/ale' " Error and warning checking for vim, install eslint for checking js
 Plug 'omnisharp/omnisharp-vim'  " Checking error for c#
@@ -25,7 +21,7 @@ Plug 'raimondi/delimitmate' " Auto close for quotes
 Plug 'preservim/nerdcommenter'  " Quick comment
 call plug#end()
 
-
+set encoding=utf-8
 colorscheme gruvbox
 set background=dark
 syntax on
@@ -41,6 +37,13 @@ set autowrite   "Auto write change to file
 set noswapfile
 map <C-a> ggVG
 map <C-c> "+y
+"set mouse=a
+set nobackup    " Some servers have issues with backup files
+set nowritebackup   " Some servers have issues with backup files
+set updatetime=750
+set ch=1
+set wh=1
+" set cmdline=2
 
 let g:lightline = {'colorscheme': 'gruvbox'}
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
@@ -52,8 +55,8 @@ nnoremap F :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
-nnoremap <C-o> :CocList outline<CR>
-map <C-p> :Prettier<CR>
+"command! -nargs=0 Format :call CocAction('format')
+"map <C-p> :Format<CR>
 let g:prettier#config#print_width = 1000    "	Set how many word in a line when format
 let g:prettier#config#tab_width = 2 "	Set Tab width when format
 let g:ale_linters = { 'cs': ['OmniSharp'] } " In cs file auto use omnisharp for syntax checking
