@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'wincent/terminus'
 Plug 'morhetz/gruvbox'  " Theme for vim
 Plug 'itchyny/lightline.vim'	"Status bar for vim
 Plug 'mg979/vim-xtabline'		"List opened file for vim
