@@ -1,1 +1,4 @@
-{"prettier.printWidth":1000}
+{
+	"codeLens.enable": false,
+	"coc.preferences.formatOnSaveFiletypes":[]
+}

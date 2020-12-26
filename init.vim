@@ -6,8 +6,8 @@ Plug 'preservim/nerdtree'   " Display folder for tree
 Plug 'ryanoasis/vim-devicons'   " Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'  " Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Change color for tree folder
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim', 'CocInstall coc-prettier'
 Plug 'sheerun/vim-polyglot' " Color skin for language	
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim', 'CocInstall coc-prettier'
 Plug 'w0rp/ale' " Error and warning checking for vim, install eslint for checking js
 Plug 'omnisharp/omnisharp-vim'  " Checking error for c#
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find file
@@ -18,6 +18,7 @@ Plug 'raimondi/delimitmate' " Auto close for quotes
 Plug 'preservim/nerdcommenter'  " Quick comment
 call plug#end()
 
+set encoding=utf-8
 set encoding=utf-8
 colorscheme gruvbox
 set background=dark
@@ -36,7 +37,7 @@ map <C-a> ggVG
 map <C-c> "+y
 set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
-set updatetime=750
+set updatetime=300
 
 let g:lightline = {'colorscheme': 'gruvbox'}
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
@@ -49,7 +50,8 @@ autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
 command! -nargs=0 Format :call CocAction('format')
-map <C-p> :Format<CR>
+noremap <C-p> :Format<CR>
+" inoremap <silent><expr> <c-space> coc#refresh() " Use <c-space> to trigger completion
 let g:ale_linters = { 'cs': ['OmniSharp'] } " In cs file auto use omnisharp for syntax checking
 noremap ` :GFiles<CR>
 noremap ; :Buffers<CR>
