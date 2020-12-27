@@ -16,28 +16,31 @@ Plug 'airblade/vim-gitgutter'   "	Checking change in file with git state
 Plug 'alvan/vim-closetag'   " Auto close tag for html
 Plug 'raimondi/delimitmate' " Auto close for quotes
 Plug 'preservim/nerdcommenter'  " Quick comment
+Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
+Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
 call plug#end()
 
+let mapleader = "\<Space>"
 set encoding=utf-8
-set encoding=utf-8
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 syntax on
 set number
 set relativenumber
-set shiftwidth=2
-set tabstop=2
 set backspace=2 " Make backspace work like most other programs 
 set encoding=utf-8
 set clipboard=unnamedplus   "Use to copy to clipboard
 set autoread    "	Auto check file change
 set autowrite   "Auto write change to file
 set noswapfile
-map <C-a> ggVG
-map <C-c> "+y
+map <Leader>a ggVG
+map <Leader>y "+y
+map <Leader>s :w<CR>
+map <Leader>q :q<CR>
 set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
+set nowrap " don't wrap lines
 
 let g:lightline = {'colorscheme': 'gruvbox'}
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
@@ -50,10 +53,11 @@ autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
 command! -nargs=0 Format :call CocAction('format')
-noremap <C-p> :Format<CR>
-" inoremap <silent><expr> <c-space> coc#refresh() " Use <c-space> to trigger completion
+noremap <Leader>f :Format<CR>
 let g:ale_linters = { 'cs': ['OmniSharp'] } " In cs file auto use omnisharp for syntax checking
 noremap ` :GFiles<CR>
 noremap ; :Buffers<CR>
 let g:closetag_filenames = '*.html,*.js'    " Only in html and js file, use closetag plugin
-map <C-\> <plug>NERDCommenterToggle
+map  <Leader>c <plug>NERDCommenterToggle
+map  <Leader>f <Plug>(easymotion-bd-f)
+map  <Leader>w <Plug>(easymotion-bd-w)
