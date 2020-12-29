@@ -33,10 +33,6 @@ set clipboard=unnamedplus   "Use to copy to clipboard
 set autoread    "	Auto check file change
 set autowrite   "Auto write change to file
 set noswapfile
-map <Leader>a ggVG
-map <Leader>y "+y
-map <Leader>s :w<CR>
-map <Leader>q :q<CR>
 set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
@@ -47,17 +43,21 @@ let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
 let NERDTreeIgnore=['node_modules', 'bin', 'obj']   " Don't show some folder in tree folder
 let g:NERDTreeWinSize=40    " Set width of tree
-map <C-n> :NERDTreeToggle<CR>
-nnoremap F :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
-command! -nargs=0 Format :call CocAction('format')
-noremap <Leader>f :Format<CR>
 let g:ale_linters = { 'cs': ['OmniSharp'] } " In cs file auto use omnisharp for syntax checking
 noremap ` :GFiles<CR>
 noremap ; :Buffers<CR>
 let g:closetag_filenames = '*.html,*.js'    " Only in html and js file, use closetag plugin
-map  <Leader>c <plug>NERDCommenterToggle
-map  <Leader>f <Plug>(easymotion-bd-f)
-map  <Leader>w <Plug>(easymotion-bd-w)
+
+map <Leader>/ <plug>NERDCommenterToggle
+map <Leader>f :call CocAction("format")<CR> 
+map <Leader>w <Plug>(easymotion-bd-w)
+map <Leader>t <C-w>w
+map <Leader>a ggVG
+map <Leader>c "+y
+map <Leader>s :w<CR>
+map <Leader>q :q<CR>
+map <C-n> :NERDTreeToggle<CR>
+map F :NERDTreeFind<CR>
