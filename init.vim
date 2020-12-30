@@ -14,10 +14,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find file
 Plug 'junegunn/fzf.vim' " Find file for vim
 Plug 'airblade/vim-gitgutter'   "	Checking change in file with git state
 Plug 'alvan/vim-closetag'   " Auto close tag for html
+Plug 'andrewradev/tagalong.vim'	 "	Auto rename tag
 Plug 'raimondi/delimitmate' " Auto close for quotes
 Plug 'preservim/nerdcommenter'  " Quick comment
 Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
 Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
+Plug 'tpope/vim-fugitive'	"Git extension
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -41,7 +43,8 @@ set nowrap " don't wrap lines
 let g:lightline = {'colorscheme': 'gruvbox'}
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
-let NERDTreeIgnore=['node_modules', 'bin', 'obj']   " Don't show some folder in tree folder
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['node_modules', 'bin', 'obj', '.git', '.vs', '.vscode', '.config', '.env', '.env.production', 'package-lock.json', 'yarn.lock', '.DS_Store']   " Don't show some folder in tree folder
 let g:NERDTreeWinSize=40    " Set width of tree
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
@@ -49,7 +52,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ale_linters = { 'cs': ['OmniSharp'] } " In cs file auto use omnisharp for syntax checking
 noremap ` :GFiles<CR>
 noremap ; :Buffers<CR>
-let g:closetag_filenames = '*.html,*.js'    " Only in html and js file, use closetag plugin
+let g:closetag_filenames = '*.html,*.js,*.jsx'    " Only in html and js file, use closetag plugin
 
 map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>f :call CocAction("format")<CR> 
