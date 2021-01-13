@@ -59,10 +59,12 @@ let NERDTreeShowLineNumbers=1   " Show line number for vim
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', '.git', '.vs', '.vscode', '.config', '.env', '.env.production', 'package-lock.json', 'yarn.lock', '.DS_Store']   " Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
-let g:closetag_filenames = '*.html,*.js,*.jsx,*.xml'    " Only in html and js file, use closetag plugin
+let g:closetag_filenames = '*.html,*.js,*.xml'    " Only in html and js file, use closetag plugin
 let g:coc_global_extensions=['coc-tsserver', 'coc-json', 'coc-omnisharp', 'coc-css', 'coc-html', 'coc-xml']
+let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
-let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1}
+let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
+
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
