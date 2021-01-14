@@ -13,6 +13,7 @@ set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
 set nowrap " don't wrap lines
+set modifiable
 
 call plug#begin()
 Plug 'morhetz/gruvbox'  " Theme for vim
@@ -35,6 +36,7 @@ Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
 Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
 Plug 'tpope/vim-fugitive'	"Git extension
 Plug 'valloric/matchtagalways'  "	Jump to end of tag, and highlight tag html
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 map ` :GFiles<CR>
@@ -64,6 +66,11 @@ let g:coc_global_extensions=['coc-tsserver', 'coc-json', 'coc-omnisharp', 'coc-c
 let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
+let g:floaterm_keymap_kill   = '<F6>'
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_toggle = '<F12>'
 
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
