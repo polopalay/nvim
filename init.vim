@@ -36,7 +36,7 @@ Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
 Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
 Plug 'tpope/vim-fugitive'	"Git extension
 Plug 'valloric/matchtagalways'  "	Jump to end of tag, and highlight tag html
-Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'		"	Terminal inside vim
 call plug#end()
 
 map ` :GFiles<CR>
