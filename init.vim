@@ -34,9 +34,9 @@ Plug 'raimondi/delimitmate' " Auto close for quotes
 Plug 'preservim/nerdcommenter'  " Quick comment
 Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
 Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
-Plug 'tpope/vim-fugitive'	"Git extension
 Plug 'valloric/matchtagalways'  "	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'		"	Terminal inside vim
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 map ` :GFiles<CR>
@@ -71,6 +71,8 @@ let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
