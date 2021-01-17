@@ -5,6 +5,9 @@ set background=dark
 set number
 set relativenumber
 set backspace=2 " Make backspace work like most other programs 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
 set encoding=utf-8
 set autoread    "	Auto check file change
 set autowrite   "Auto write change to file
@@ -15,14 +18,13 @@ set updatetime=300
 set nowrap " don't wrap lines
 
 call plug#begin()
-Plug 'morhetz/gruvbox'  " Theme for vim
+Plug 'doums/darcula'
 Plug 'itchyny/lightline.vim'	"Status bar for vim
 Plug 'mg979/vim-xtabline'		"List opened file for vim
 Plug 'preservim/nerdtree'   " Display folder for tree
 Plug 'ryanoasis/vim-devicons'   " Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'  " Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Change color for tree folder
-"Plug 'sheerun/vim-polyglot' " Color skin for language	
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim', 'CocInstall coc-prettier'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find file
 Plug 'junegunn/fzf.vim' " Find file for vim
@@ -52,8 +54,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 
-colorscheme gruvbox
-let g:lightline = {'colorscheme': 'gruvbox'}
+colorscheme darcula
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
 let NERDTreeShowHidden=1
