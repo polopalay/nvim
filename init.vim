@@ -13,7 +13,6 @@ set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
 set nowrap " don't wrap lines
-set modifiable
 
 call plug#begin()
 Plug 'morhetz/gruvbox'  " Theme for vim
@@ -23,7 +22,7 @@ Plug 'preservim/nerdtree'   " Display folder for tree
 Plug 'ryanoasis/vim-devicons'   " Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'  " Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Change color for tree folder
-Plug 'sheerun/vim-polyglot' " Color skin for language	
+"Plug 'sheerun/vim-polyglot' " Color skin for language	
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim', 'CocInstall coc-prettier'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find file
 Plug 'junegunn/fzf.vim' " Find file for vim
@@ -36,7 +35,6 @@ Plug 'easymotion/vim-easymotion'	" Quick jump to location in file
 Plug 'tpope/vim-surround'	 "Quick change, delete, add surround
 Plug 'valloric/matchtagalways'  "	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'		"	Terminal inside vim
-Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 map ` :GFiles<CR>
