@@ -18,7 +18,7 @@ set updatetime=300
 set nowrap " don't wrap lines
 
 call plug#begin()
-Plug 'doums/darcula'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'	"Status bar for vim
 Plug 'mg979/vim-xtabline'		"List opened file for vim
 Plug 'preservim/nerdtree'   " Display folder for tree
@@ -54,8 +54,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 
-colorscheme darcula
-let g:lightline = { 'colorscheme': 'darculaOriginal' }
+colorscheme gruvbox
+let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
 let NERDTreeShowHidden=1
