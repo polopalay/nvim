@@ -1,5 +1,4 @@
 let mapleader = " "
-syntax on
 set encoding=utf-8
 set background=dark
 set number
@@ -55,6 +54,7 @@ map <C-f> :NERDTreeFind<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 
 colorscheme gruvbox
+syntax on
 let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
