@@ -38,7 +38,6 @@ Plug 'tpope/vim-surround'	"	Quick change, delete, add surround
 Plug 'valloric/matchtagalways'	"	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"	Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"	Color skin for language
-"Plug 'omnisharp/omnisharp-vim'	"	C# extension
 call plug#end()
 
 colorscheme gruvbox
