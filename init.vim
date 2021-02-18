@@ -24,8 +24,8 @@ call plug#end()
 let mapleader = " "
 set encoding=utf-8
 set background=dark
-set number
-set relativenumber
+set number relativenumber
+set cursorline
 set backspace=2 " Make backspace work like most other programs 
 set tabstop=4
 set shiftwidth=4
@@ -72,7 +72,11 @@ let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
 let g:floaterm_keymap_toggle = '<F12>'
 let g:multi_cursor_start_word_key      = '<C-n>'
+let g:floaterm_width = 1.0
+let g:floaterm_height = 1.0
 
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
+
+hi! Normal ctermbg=NONE guibg=NONE
