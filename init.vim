@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'	"	Quick change, delete, add surround
 Plug 'valloric/matchtagalways'	"	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"	Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"	Color skin for language
+"Plug 'mxw/vim-jsx'
 call plug#end()
 
 let mapleader = " "
@@ -27,8 +28,8 @@ set background=dark
 set number relativenumber
 set cursorline
 set backspace=2 " Make backspace work like most other programs 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set softtabstop=0
 set encoding=utf-8
 set autoread    "	Auto check file change
