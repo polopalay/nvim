@@ -79,5 +79,6 @@ let g:floaterm_height = 1.0
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
+autocmd FileType scss setl iskeyword+=@-@
 
 hi! Normal ctermbg=NONE guibg=NONE
