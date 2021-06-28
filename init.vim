@@ -19,7 +19,6 @@ Plug 'tpope/vim-surround'	"	Quick change, delete, add surround
 Plug 'valloric/matchtagalways'	"	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"	Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"	Color skin for language
-"Plug 'mxw/vim-jsx'
 call plug#end()
 
 let mapleader = " "
@@ -60,6 +59,7 @@ map <C-f> :NERDTreeFind<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 inoremap <silent><expr> <c-space> coc#refresh()
 
+let g:OmniSharp_server_use_mono = 1
 let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
@@ -67,7 +67,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', '.git', '.vs', '.vscode', '.config', '.env', '.env.production', 'package-lock.json', 'yarn.lock', '.DS_Store', '.idea']   " Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'    " Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-svg', 'coc-vimlsp', 'coc-python']
+let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html']
 let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
