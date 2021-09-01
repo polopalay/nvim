@@ -39,14 +39,18 @@ set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
 set nowrap " don't wrap lines
+set shortmess+=c
 
 colorscheme gruvbox
 syntax on
 
 map ` :GFiles<CR>
+map ' :Files<CR>
 map ; :Buffers<CR>
 map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>f :call CocAction("format")<CR> 
+map gd :call CocActionAsync('jumpDefinition')<CR>
+nmap <leader>n <Plug>(coc-rename)
 map <Leader>w <Plug>(easymotion-bd-w)
 map <Leader>t <C-w>w
 map <Leader>a ggVG
@@ -67,7 +71,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', '.git', '.vs', '.vscode', '.config', '.env', '.env.production', 'package-lock.json', 'yarn.lock', '.DS_Store', '.idea']   " Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'    " Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html']
+let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-clangd']
 let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
