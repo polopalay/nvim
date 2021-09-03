@@ -6,7 +6,7 @@ Plug 'preservim/nerdtree'	"	Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"	Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'	"	Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"	Change color for tree folder
-Plug 'neoclide/coc.nvim', {'branch': 'release'}	"	Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim', 'CocInstall coc-prettier'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}	"	Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	"	Find file
 Plug 'junegunn/fzf.vim'	"	Find file for vim
 Plug 'airblade/vim-gitgutter'	"	Checking change in file with git state
@@ -15,7 +15,6 @@ Plug 'andrewradev/tagalong.vim'	"	Auto rename tag
 Plug 'raimondi/delimitmate'	" Auto close for quotes
 Plug 'preservim/nerdcommenter'	"	Quick comment
 Plug 'easymotion/vim-easymotion'	"	Quick jump to location in file
-Plug 'tpope/vim-surround'	"	Quick change, delete, add surround
 Plug 'valloric/matchtagalways'	"	Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"	Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"	Color skin for language
@@ -40,7 +39,6 @@ set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
 set nowrap " don't wrap lines
 set nojoinspaces
-set shortmess+=c
 
 colorscheme gruvbox
 syntax on
@@ -78,7 +76,6 @@ let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
 let g:floaterm_keymap_toggle = '<F12>'
-"let g:multi_cursor_start_word_key      = '<C-n>'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 1.0
 
