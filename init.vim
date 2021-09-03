@@ -39,6 +39,7 @@ set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
 set updatetime=300
 set nowrap " don't wrap lines
+set nojoinspaces
 set shortmess+=c
 
 colorscheme gruvbox
@@ -60,6 +61,7 @@ map <Leader>q :qa<CR>
 map <Leader>o :CocList outline<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
+map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -76,7 +78,7 @@ let g:tagalong_additional_filetypes = ['javascript']
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
 let g:floaterm_keymap_toggle = '<F12>'
-let g:multi_cursor_start_word_key      = '<C-n>'
+"let g:multi_cursor_start_word_key      = '<C-n>'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 1.0
 
