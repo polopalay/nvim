@@ -1,7 +1,6 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'	"	Status bar for vim
-Plug 'mg979/vim-xtabline'	"	List opened file for vim
+Plug 'vim-scripts/BufLine'
 Plug 'preservim/nerdtree'	"	Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"	Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'	"	Git status for tree folder
@@ -65,10 +64,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:OmniSharp_server_use_mono = 1
 let g:lightline = { 'colorscheme': 'gruvbox' }
-let g:xtabline_settings = {'tabline_modes':['buffers', 'tabs', 'arglist']}
 let NERDTreeShowLineNumbers=1   " Show line number for vim
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', '.git', '.vs', '.vscode', '.config', '.env', '.env.production', 'package-lock.json', 'yarn.lock', '.DS_Store', '.idea']   " Don't show some folder in tree folder
+let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock'] " Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'    " Only in html and js file, use closetag plugin
 let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-clangd', 'coc-go', 'coc-vimlsp', 'coc-jedi']
