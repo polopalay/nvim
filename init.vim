@@ -60,10 +60,10 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
+nmap qf  <Plug>(coc-fix-current)
 inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:OmniSharp_server_use_mono = 1
-let g:lightline = { 'colorscheme': 'gruvbox' }
 let NERDTreeShowLineNumbers=1   " Show line number for vim
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock'] " Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
