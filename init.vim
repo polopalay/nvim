@@ -1,6 +1,6 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'	"Theme for vim
-Plug 'vim-scripts/BufLine'	"List opened buffers
+Plug 'ap/vim-buftabline'	"List opened buffers
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'	"Git status for tree folder
