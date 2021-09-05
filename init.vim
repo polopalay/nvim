@@ -1,6 +1,6 @@
 call plug#begin()
-Plug 'morhetz/gruvbox'
-Plug 'vim-scripts/BufLine'
+Plug 'morhetz/gruvbox'	"Theme for vim
+Plug 'vim-scripts/BufLine'	"List opened buffers
 Plug 'preservim/nerdtree'	"	Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"	Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'	"	Git status for tree folder
@@ -19,25 +19,23 @@ Plug 'voldikss/vim-floaterm'	"	Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"	Color skin for language
 call plug#end()
 
-let mapleader = " "
-set encoding=utf-8
-set background=dark
-set number relativenumber
-set cursorline
+let mapleader = " "	"Map space to leader key
+set encoding=utf-8	"Set endcoding in vim is utf-8
+set background=dark	"Set background is dark
+set number relativenumber	"Show current line number and distance to other line
+set cursorline	"Hightlight cursor
 set backspace=2 " Make backspace work like most other programs 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=0
-set encoding=utf-8
+set tabstop=2	" Softtabs, 2 spaces
+set shiftwidth=2	" Softtabs, 2 spaces 
+set nojoinspaces	"One space not two
 set autoread    "	Auto check file change
 set autowrite   "Auto write change to file
-set noswapfile
 set hidden	"	Some servers have issues with backup files
 set nobackup    " Some servers have issues with backup files
 set nowritebackup   " Some servers have issues with backup files
-set updatetime=300
 set nowrap " don't wrap lines
-set nojoinspaces
+set updatetime=300	"Make vim smoother
+set noswapfile	"Some extendsion i don't need
 
 colorscheme gruvbox
 syntax on
@@ -60,25 +58,20 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
-nmap qf  <Plug>(coc-fix-current)
 inoremap <silent><expr> <c-space> coc#refresh()
 
-let g:OmniSharp_server_use_mono = 1
-let NERDTreeShowLineNumbers=1   " Show line number for vim
-let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock'] " Don't show some folder in tree folder
+let NERDTreeShowLineNumbers=1	" Show line number for vim
+let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    " Set width of tree
-let g:closetag_filenames = '*.html,*.js,*.xml'    " Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-clangd', 'coc-go', 'coc-vimlsp', 'coc-jedi']
-let g:tagalong_additional_filetypes = ['javascript']
-let g:mta_use_matchparen_group = 1
-let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}
-let g:floaterm_keymap_toggle = '<F12>'
-let g:floaterm_width = 1.0
-let g:floaterm_height = 1.0
+let g:closetag_filenames = '*.html,*.js,*.xml'	" Only in html and js file, use closetag plugin
+let g:coc_global_extensions=['coc-tsserver', 'coc-omnisharp', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-clangd', 'coc-go', 'coc-vimlsp', 'coc-jedi']	"Add syntax for vim
+let g:mta_use_matchparen_group = 1	"Enable auto close tag
+let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
+let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
 
 autocmd VimEnter * NERDTree "	Auto open nerdtree
 autocmd VimEnter * wincmd p "	Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
-autocmd FileType scss setl iskeyword+=@-@
+autocmd FileType scss setl iskeyword+=@-@	"Enable css color in scss and sass
 
 hi! Normal ctermbg=NONE guibg=NONE
