@@ -17,6 +17,7 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
+Plug 'adamclerk/vim-razor'
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -46,6 +47,7 @@ map ; :Buffers<CR>
 map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>f :call CocAction("format")<CR> 
 map gd :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <leader>n <Plug>(coc-rename)
 map <Leader>w <Plug>(easymotion-bd-w)
 map <Leader>t <C-w>w
@@ -75,3 +77,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd FileType scss setl iskeyword+=@-@	"Enable css color in scss and sass
 
 hi! Normal ctermbg=NONE guibg=NONE
+
+"Some support function
+"Function to show document in cocnvim
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
