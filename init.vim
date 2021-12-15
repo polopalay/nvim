@@ -21,7 +21,6 @@ call plug#end()
 
 let mapleader = " "	"Map space to leader key
 set encoding=utf-8	"Set endcoding in vim is utf-8
-set background=dark	"Set background is dark
 set number relativenumber	"Show current line number and distance to other line
 set cursorline	"Hightlight cursor
 set backspace=2 "Make backspace work like most other programs 
@@ -37,6 +36,7 @@ set nowrap "Don't wrap lines
 set updatetime=300	"Make vim smoother
 set noswapfile	"Some extendsion i don't need
 
+set background=dark
 colorscheme gruvbox
 syntax on
 
