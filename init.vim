@@ -1,6 +1,5 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'	"Theme for vim
-"Plug 'OmniSharp/omnisharp-vim'
 Plug 'vim-airline/vim-airline' "Display info for buffers and file info
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"Show icon to tree folder
@@ -49,18 +48,18 @@ map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>f <Plug>(coc-format-selected) 
 map gd :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-nmap <leader>n <Plug>(coc-rename)
-nmap <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>t <C-w>w
-nmap <Leader>a ggVG
-nmap <Leader>c "+y
-nmap <Leader>s :w<CR>
-nmap <Leader>q :qa<CR>
-nmap <Leader>o :CocList outline<CR>
-nmap <C-n> :NERDTreeToggle<CR>
-nmap <C-f> :NERDTreeFind<CR>
-nmap <C-h> :nohl<CR>
-nmap <leader>j :MtaJumpToOtherTag<cr>
+map <leader>n <Plug>(coc-rename)
+map <Leader>w <Plug>(easymotion-bd-w)
+map <Leader>t <C-w>w
+map <Leader>a ggVG
+map <Leader>c "+y
+map <Leader>s :w<CR>
+map <Leader>q :qa<CR>
+map <Leader>o :CocList outline<CR>
+map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
+map <C-h> :nohl<CR>
+map <leader>j :MtaJumpToOtherTag<cr>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -69,7 +68,7 @@ let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-prettier', 'coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-clangd', 'coc-go', 'coc-vimlsp', 'coc-jedi', 'coc-vetur', 'coc-go', 'coc-omnisharp', 'coc-eslint']	"Add syntax for vim
+let g:coc_global_extensions=['coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-go', 'coc-vimlsp', 'coc-omnisharp']	"Add syntax for vim
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
