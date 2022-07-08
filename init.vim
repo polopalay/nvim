@@ -17,6 +17,7 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
+Plug 'tpope/vim-surround' "Change, delete, edit surround tag or qoute for vim
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -45,7 +46,7 @@ map ` :GFiles<CR>
 map ' :Files<CR>
 map ; :Buffers<CR>
 map <Leader>/ <plug>NERDCommenterToggle
-map <Leader>f <Plug>(coc-format-selected) 
+map <Leader>f :silent exec "!yarn eslint %:p --fix"<CR>
 map gd :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 map <leader>n <Plug>(coc-rename)
@@ -61,14 +62,15 @@ map <C-f> :NERDTreeFind<CR>
 map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap <F5> :GundoToggle<CR>
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#enabled = 1  "Show current buffers
+let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
 let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-explorer', 'coc-json', 'coc-css', 'coc-html', 'coc-go', 'coc-vimlsp', 'coc-omnisharp']	"Add syntax for vim
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html']	"Add syntax for vim
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
@@ -77,6 +79,7 @@ autocmd VimEnter * NERDTree "Auto open nerdtree
 autocmd VimEnter * wincmd p "Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
 autocmd FileType scss setl iskeyword+=@-@	"Enable css color in scss and sass
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 hi! Normal ctermbg=NONE guibg=NONE
 
