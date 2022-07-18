@@ -17,7 +17,6 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
-Plug 'tpope/vim-surround' "Change, delete, edit surround tag or qoute for vim
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -42,27 +41,48 @@ set background=dark
 colorscheme gruvbox
 syntax on
 
+"Show all files follow git
 map ` :GFiles<CR>
+"Show all files
 map ' :Files<CR>
+"Show all buffers
 map ; :Buffers<CR>
+"Toggle comment
 map <Leader>/ <plug>NERDCommenterToggle
-map <Leader>f :silent exec "!yarn eslint %:p --fix"<CR>
+"Format current buffer(only eslint)
+map <leader>f :CocCommand eslint.executeAutofix <CR> 
+"Show recomend fix to current file
+map <leader>F <Plug>(coc-codeaction)
+"Quick fix to current file
+map <leader>qf <Plug>(coc-fix-current)
+"Jump to definition of value or function
 map gd :call CocActionAsync('jumpDefinition')<CR>
+"Show document of function or value
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+"Rename of value
 map <leader>n <Plug>(coc-rename)
+"Jump to anywhere in file
 map <Leader>w <Plug>(easymotion-bd-w)
+"Move between tab in buffer
 map <Leader>t <C-w>w
+"Select all file
 map <Leader>a ggVG
+"Copy current selected
 map <Leader>c "+y
+"Save current file
 map <Leader>s :w<CR>
-map <Leader>q :qa<CR>
+"Show outline of current file(list function, var,...) press enter to quick jump
 map <Leader>o :CocList outline<CR>
+"Toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
+"Find file in nerd tree
 map <C-f> :NERDTreeFind<CR>
+"No highlight file(after find, file will be highlight)
 map <C-h> :nohl<CR>
+"Jump to end or start of tag(html)
 map <leader>j :MtaJumpToOtherTag<cr>
+"Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
-nnoremap <F5> :GundoToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1  "Show current buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
@@ -70,16 +90,24 @@ let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html']	"Add syntax for vim
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json']	"Add syntax for vim
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
+
+command! -nargs=0 Format :call CocActionAsync('format') "Set command :Format to format current buffer
 
 autocmd VimEnter * NERDTree "Auto open nerdtree
 autocmd VimEnter * wincmd p "Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
 autocmd FileType scss setl iskeyword+=@-@	"Enable css color in scss and sass
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup fotmatter
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  "autocmd FileType typescript,json setl formatexpr=CocCommand eslint.executeAutofix
+augroup end
+
 
 hi! Normal ctermbg=NONE guibg=NONE
 
