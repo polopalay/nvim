@@ -53,11 +53,10 @@ map ' :Files<CR>
 "Show all buffers
 map ; :Buffers<CR>
 "Find by content(require brew install ripgrep)
-nnoremap | <cmd>Telescope live_grep<cr>
+nnoremap Fg <cmd>Telescope live_grep<cr>
 "Toggle comment
 map <Leader>/ <plug>NERDCommenterToggle
-"Format current buffer(only eslint)
-"map <leader>f :CocCommand eslint.executeAutofix <CR> 
+"Format code
 map <leader>f :Format <CR> 
 "Show recomend fix to current file
 map <leader>F <Plug>(coc-codeaction)
