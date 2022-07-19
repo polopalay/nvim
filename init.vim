@@ -8,6 +8,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"Change color for tree folder
 Plug 'neoclide/coc.nvim', {'branch': 'release'}	"Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	"Find file
 Plug 'junegunn/fzf.vim'	"Find file for vim
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'airblade/vim-gitgutter'	"Checking change in file with git state
 Plug 'alvan/vim-closetag'	"Auto close tag for html
 Plug 'andrewradev/tagalong.vim'	"Auto rename tag
@@ -17,7 +19,9 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
-"Plug 'omnisharp/omnisharp-vim'
+Plug 'tpope/vim-fugitive'
+"Plug 'puremourning/vimspector'
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -40,7 +44,6 @@ set mouse=a "Click cursor
 
 set background=dark
 colorscheme gruvbox
-filetype indent plugin on
 syntax on
 
 "Show all files follow git
@@ -49,10 +52,13 @@ map ` :GFiles<CR>
 map ' :Files<CR>
 "Show all buffers
 map ; :Buffers<CR>
+"Find by content(require brew install ripgrep)
+nnoremap | <cmd>Telescope live_grep<cr>
 "Toggle comment
 map <Leader>/ <plug>NERDCommenterToggle
 "Format current buffer(only eslint)
-map <leader>f :CocCommand eslint.executeAutofix <CR> 
+"map <leader>f :CocCommand eslint.executeAutofix <CR> 
+map <leader>f :Format <CR> 
 "Show recomend fix to current file
 map <leader>F <Plug>(coc-codeaction)
 "Quick fix to current file
@@ -85,6 +91,8 @@ map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 "Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap n :lua require'dap'.continue()<CR>
 
 let g:airline#extensions#tabline#enabled = 1  "Show current buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
@@ -97,7 +105,8 @@ let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
-let g:OmniSharp_server_use_mono = 1
+"let g:vimspector_install_gadgets = ['netcoredbg']
+"let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 command! -nargs=0 Format :call CocActionAsync('format') "Set command :Format to format current buffer
 
@@ -115,7 +124,6 @@ augroup end
 
 hi! Normal ctermbg=NONE guibg=NONE
 
-"Some support function
 "Function to show document in cocnvim
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -126,3 +134,23 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+lua <<EOF
+local dap = require('dap')
+dap.defaults.fallback.external_terminal = true
+dap.adapters.coreclr = {
+  type = 'executable';
+  command = vim.fn.getcwd() .. '/bin/Debug/net6.0/console.dll',
+  args = {'--interpreter=vscode'}
+}
+dap.configurations.cs = {
+  {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+        return vim.fn.input('', vim.fn.getcwd() .. '/bin/Debug/net6.0/console.dll', 'file')
+    end,
+  },
+}
+EOF
