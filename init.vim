@@ -17,6 +17,7 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
+"Plug 'omnisharp/omnisharp-vim'
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -39,6 +40,7 @@ set mouse=a "Click cursor
 
 set background=dark
 colorscheme gruvbox
+filetype indent plugin on
 syntax on
 
 "Show all files follow git
@@ -90,10 +92,12 @@ let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp']	"Add syntax for vim
+"Plugin for cocnvim, dotnet tool install --global csharp-ls for use omnisharp 
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp']
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
+let g:OmniSharp_server_use_mono = 1
 
 command! -nargs=0 Format :call CocActionAsync('format') "Set command :Format to format current buffer
 

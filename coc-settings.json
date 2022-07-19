@@ -1,4 +1,18 @@
 {
 	"eslint.autoFixOnSave": true,
-	"eslint.format.enable":true
+	"eslint.format.enable": true,
+	"languageserver": {
+		"csharp-ls": {
+			"command": "csharp-ls",
+			"filetypes": [
+				"cs"
+			],
+			"rootPatterns": [
+				"*.csproj",
+				".vim/",
+				".git/",
+				".hg/"
+			]
+		}
+	}
 }
