@@ -95,7 +95,7 @@ let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
 "Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp 
-let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp']
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp', 'coc-go']
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_new    = '<F7>'
