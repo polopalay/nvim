@@ -19,9 +19,6 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
-Plug 'tpope/vim-fugitive'
-"Plug 'puremourning/vimspector'
-Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
@@ -90,8 +87,6 @@ map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 "Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
-nnoremap b :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap n :lua require'dap'.continue()<CR>
 
 let g:airline#extensions#tabline#enabled = 1  "Show current buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
@@ -99,13 +94,16 @@ let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-"Plugin for cocnvim, dotnet tool install --global csharp-ls for use omnisharp 
+"Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp 
 let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp']
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_kill   = '<F10>'
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
-"let g:vimspector_install_gadgets = ['netcoredbg']
-"let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+"let g:floaterm_keymap_toggle = '<F12>'
 
 command! -nargs=0 Format :call CocActionAsync('format') "Set command :Format to format current buffer
 
@@ -114,12 +112,6 @@ autocmd VimEnter * wincmd p "Auto switch to document after auto open nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  "Auto exit nerdtree
 autocmd FileType scss setl iskeyword+=@-@	"Enable css color in scss and sass
 autocmd CursorHold * silent call CocActionAsync('highlight')
-augroup fotmatter
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  "autocmd FileType typescript,json setl formatexpr=CocCommand eslint.executeAutofix
-augroup end
-
 
 hi! Normal ctermbg=NONE guibg=NONE
 
@@ -133,23 +125,3 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
-lua <<EOF
-local dap = require('dap')
-dap.defaults.fallback.external_terminal = true
-dap.adapters.coreclr = {
-  type = 'executable';
-  command = vim.fn.getcwd() .. '/bin/Debug/net6.0/console.dll',
-  args = {'--interpreter=vscode'}
-}
-dap.configurations.cs = {
-  {
-    type = "coreclr",
-    name = "launch - netcoredbg",
-    request = "launch",
-    program = function()
-        return vim.fn.input('', vim.fn.getcwd() .. '/bin/Debug/net6.0/console.dll', 'file')
-    end,
-  },
-}
-EOF
