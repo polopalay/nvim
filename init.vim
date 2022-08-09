@@ -37,7 +37,7 @@ set nowritebackup   "Some servers have issues with backup files
 set nowrap "Don't wrap lines
 set updatetime=300	"Make vim smoother
 set noswapfile	"Some extendsion i don't need
-set mouse=a "Click cursor
+"set mouse=a "Click cursor
 
 set background=dark
 colorscheme gruvbox
