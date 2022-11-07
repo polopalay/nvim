@@ -87,23 +87,25 @@ map <C-h> :nohl<CR>
 map <leader>j :MtaJumpToOtherTag<cr>
 "Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
+" Press enter to auto comple
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 let g:airline#extensions#tabline#enabled = 1  "Show current buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
 let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
-let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock']	" Don't show some folder in tree folder
+let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock', '.DS_Store']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
+let NERDTreeShowHidden=1
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
 "Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp 
-let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp', 'coc-go']
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp']
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
-let g:floaterm_keymap_new    = '<F7>'
-let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_new    = '<F8>'
+"let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_kill   = '<F10>'
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
-"let g:floaterm_keymap_toggle = '<F12>'
 
 command! -nargs=0 Format :call CocActionAsync('format') "Set command :Format to format current buffer
 
