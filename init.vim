@@ -1,6 +1,7 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'	"Theme for vim
-Plug 'vim-airline/vim-airline' "Display info for buffers and file info
+"Plug 'vim-airline/vim-airline' "Display info for buffers and file info
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"Show icon to tree folder
 Plug 'Xuyuanp/nerdtree-git-plugin'	"Git status for tree folder
@@ -19,15 +20,23 @@ Plug 'easymotion/vim-easymotion'	"Quick jump to location in file
 Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'doums/darcula', { 'as': 'dracula' }
+"Plug 'puremourning/vimspector'
+"Plug 'mfussenegger/nvim-dap'
+"Plug 'rcarriga/nvim-dap-ui'
 call plug#end()
 
 let mapleader = " "	"Map space to leader key
 set encoding=utf-8	"Set endcoding in vim is utf-8
 set number relativenumber	"Show current line number and distance to other line
 set cursorline	"Hightlight cursor
-set backspace=2 "Make backspace work like most other programs 
+set backspace=2 "Make backspace work like most other programs
 set tabstop=2	"Softtabs, 2 spaces
-set shiftwidth=2	"Softtabs, 2 spaces 
+set shiftwidth=2	"Softtabs, 2 spaces
 set nojoinspaces	"One space not two
 set autoread    "Auto check file change
 set autowrite   "Auto write change to file
@@ -37,10 +46,12 @@ set nowritebackup   "Some servers have issues with backup files
 set nowrap "Don't wrap lines
 set updatetime=300	"Make vim smoother
 set noswapfile	"Some extendsion i don't need
-"set mouse=a "Click cursor
+set mouse=a "Click cursor
 
 set background=dark
-colorscheme gruvbox
+colorscheme tokyonight
+"colorscheme gruvbox
+"colorscheme dracula
 syntax on
 
 "Show all files follow git
@@ -54,7 +65,7 @@ nnoremap Fg <cmd>Telescope live_grep<cr>
 "Toggle comment
 map <Leader>/ <plug>NERDCommenterToggle
 "Format code
-map <leader>f :Format <CR> 
+map <leader>f :Format <CR>
 "Show recomend fix to current file
 map <leader>F <Plug>(coc-codeaction)
 "Quick fix to current file
@@ -90,15 +101,16 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Press enter to auto comple
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-let g:airline#extensions#tabline#enabled = 1  "Show current buffers
-let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
+"let g:airline#extensions#tabline#enabled = 1  "Show current buffers
+"let g:airline#extensions#tabline#formatter = 'unique_tail'  "Setting for current buffers
+"let g:airline_theme='tagbar'
 let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let NERDTreeIgnore=['node_modules', 'build', 'bin', 'obj', 'package-lock.json', 'yarn.lock', '.DS_Store']	" Don't show some folder in tree folder
 let g:NERDTreeWinSize=45    "Set width of tree
 let NERDTreeShowHidden=1
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-"Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp 
-let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp']
+"Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp
+let g:coc_global_extensions=['coc-tsserver', 'coc-eslint', 'coc-explorer', 'coc-css', 'coc-html', 'coc-json', 'coc-vimlsp', 'coc-omnisharp', 'coc-go']
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascriptreact' : 1, 'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_new    = '<F8>'
@@ -127,3 +139,22 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+lua require('line')
+
+"autocmd packadd! vimspector
+"nmap <Leader>b <Plug>VimspectorBreakpoints
+" for normal mode - the word under the cursor
+"nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+"xmap <Leader>di <Plug>VimspectorBalloonEval
+"let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+"let g:vimspector_install_gadgets = [ 'netcoredbg' ]
+
+"lua require('config-dap')
+"nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+"nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
+"nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
+"nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
+"nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+
