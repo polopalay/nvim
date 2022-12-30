@@ -19,6 +19,7 @@ set nowrap "Don't wrap lines
 set updatetime=300	"Make vim smoother
 set noswapfile	"Some extendsion i don't need
 set mouse=a "Click cursor
+set autoread
 
 "Move between tab in buffer
 map <Leader>t <C-w>w

@@ -27,7 +27,6 @@ let g:coc_global_extensions=[
          \'coc-vimlsp', 
          \'coc-omnisharp', 
          \'coc-go']
-
 "Function to show document in cocnvim
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
