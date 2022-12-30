@@ -24,3 +24,4 @@ Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
+lua require('plugins')

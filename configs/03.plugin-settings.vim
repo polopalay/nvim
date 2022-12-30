@@ -1,5 +1,5 @@
 set background=dark
-colorscheme tokyonight
+colorscheme tokyonight-storm
 syntax on
 
 lua require('line')
