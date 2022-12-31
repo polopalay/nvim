@@ -15,5 +15,6 @@
 				".hg/"
 			]
 		}
-	}
+  },
+  "Lua.telemetry.enable": true
 }

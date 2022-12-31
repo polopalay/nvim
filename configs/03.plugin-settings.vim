@@ -2,10 +2,7 @@ set background=dark
 colorscheme tokyonight-storm
 syntax on
 
-lua require('line')
-
 let g:closetag_filenames = '*.html,*.js,*.xml'	"Only in html and js file, use closetag plugin
-"Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp
 let g:mta_use_matchparen_group = 1	"Enable auto close tag
 let g:mta_filetypes = {
          \'html' : 1, 
@@ -30,4 +27,6 @@ map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>w <Plug>(easymotion-bd-w)
 "Jump to end or start of tag(html)
 map <leader>j :MtaJumpToOtherTag<cr>
+" setup mapping to call :LazyGit
+nnoremap <silent> <leader>gg :LazyGit<CR>
 

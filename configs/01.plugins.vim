@@ -3,7 +3,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Theme
 Plug 'nvim-lualine/lualine.nvim' "Display info for buffers and file info
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'ryanoasis/vim-devicons'	"Show icon to tree folder
-Plug 'kyazdani42/nvim-web-devicons'	"Show icon
+Plug 'kyazdani42/nvim-web-devicons'	"Show icon but for more extension
 Plug 'Xuyuanp/nerdtree-git-plugin'	"Git status for tree folder
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"Change color for tree folder
 Plug 'neoclide/coc.nvim', {'branch': 'release'}	"Auto complete code for vim, 'python3 -m pip install --user --upgrade pynvim' 'python2 -m pip install --user --upgrade pynvim'
@@ -21,7 +21,10 @@ Plug 'valloric/matchtagalways'	"Jump to end of tag, and highlight tag html
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
 Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
-Plug 'mfussenegger/nvim-dap'
+Plug 'mfussenegger/nvim-dap' "Debug
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 lua require('plugins')
+lua require('line')
+lua require('notice')

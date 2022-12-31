@@ -17,6 +17,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 "Show outline of current file(list function, var,...) press enter to quick jump
 map <Leader>o :CocList outline<CR>
 
+"Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp
 let g:coc_global_extensions=[
          \'coc-tsserver', 
          \'coc-eslint',
@@ -26,7 +27,9 @@ let g:coc_global_extensions=[
          \'coc-json', 
          \'coc-vimlsp', 
          \'coc-omnisharp', 
-         \'coc-go']
+         \'coc-go',
+         \'coc-sumneko-lua']
+
 "Function to show document in cocnvim
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -38,6 +41,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+"coc-css for scss file
+autocmd FileType scss setl iskeyword+=@-@
 "Set command :Format to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
 
