@@ -13,12 +13,12 @@ set mouse=a "Click cursor
 set autoread
 
 "Move between tab in buffer
-map <Leader>t <C-w>w
+map <silent><Leader>t <C-w>w
 "Select all file
-map <Leader>a ggVG
+map <silent><Leader>a ggVG
 "Copy current selected
-map <Leader>c "+y
+map <silent><Leader>c "+y
 "Save current file
-map <Leader>s :w<CR>
+map <silent><Leader>s <cmd>silent! w<cr>
 "No highlight file(after find, file will be highlight)
-map <C-h> :nohl<CR>
+map <silent><C-h> <cmd>silent! nohl<CR>

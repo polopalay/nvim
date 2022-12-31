@@ -1,21 +1,21 @@
 "Format code
-map <leader>f :Format <CR>
+map <silent><leader>f <cmd>silent! Format <cr>
 "Show recomend fix to current file
-map <leader>F <Plug>(coc-codeaction)
+map <silent><leader>F <Plug>(coc-codeaction)
 "Quick fix to current file
-map <leader>qf <Plug>(coc-fix-current)
+map <silent><leader>qf <Plug>(coc-fix-current)
 "Jump to definition of value or function
-map gd :call CocActionAsync('jumpDefinition')<CR>
+map gd <cmd>silent! call CocActionAsync('jumpDefinition')<CR>
 "Show document of function or value
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent>K :call <SID>show_documentation()<CR>
 "Rename of value
-map <leader>n <Plug>(coc-rename)
+map <silent><leader>n <Plug>(coc-rename)
 "Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
 " Press enter to auto comple
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 "Show outline of current file(list function, var,...) press enter to quick jump
-map <Leader>o :CocList outline<CR>
+map <silent><Leader>o :silent! CocList outline<CR>
 
 "Plugin for cocnvim, 'dotnet tool install --global csharp-ls' for use omnisharp
 let g:coc_global_extensions=[
@@ -29,17 +29,6 @@ let g:coc_global_extensions=[
          \'coc-omnisharp', 
          \'coc-go',
          \'coc-sumneko-lua']
-
-"Function to show document in cocnvim
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
 
 "coc-css for scss file
 autocmd FileType scss setl iskeyword+=@-@

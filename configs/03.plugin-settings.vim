@@ -14,19 +14,19 @@ let g:mta_filetypes = {
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
 
 "Show all files follow git
-map ` :GFiles<CR>
+map <silent>` <cmd>GFiles<cr>
 "Show all files
-map ' :Files<CR>
+map <silent>' <cmd>Files<cr>
 "Show all buffers
-map ; :Buffers<CR>
+map <silent>; <cmd>Buffers<cr>
 "Find by content(require brew install ripgrep)
-nnoremap Fg <cmd>Telescope live_grep<cr>
+nnoremap <silent>Fg <cmd>Telescope live_grep<cr>
 "Toggle comment
-map <Leader>/ <plug>NERDCommenterToggle
+map <silent><Leader>/ <plug>NERDCommenterToggle
 "Jump to anywhere in file
-map <Leader>w <Plug>(easymotion-bd-w)
+map <silent><Leader>w <plug>(easymotion-bd-w)
 "Jump to end or start of tag(html)
-map <leader>j :MtaJumpToOtherTag<cr>
+map <silent><leader>j <cmd>MtaJumpToOtherTag<cr>
 " setup mapping to call :LazyGit
-nnoremap <silent> <leader>gg :LazyGit<CR>
+nnoremap <silent><leader>gg :silent! LazyGit<CR>
 
