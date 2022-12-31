@@ -12,7 +12,8 @@ let NERDTreeIgnore=[
          \'obj', 
          \'package-lock.json', 
          \'yarn.lock', 
-         \'.DS_Store']
+         \'.DS_Store',
+         \'.git',]
 let g:NERDTreeWinSize=36    "Set width of tree
 let NERDTreeShowHidden=1
 
