@@ -25,7 +25,6 @@ let g:coc_global_extensions=[
          \'coc-css', 
          \'coc-html', 
          \'coc-json', 
-         \'coc-vimlsp', 
          \'coc-omnisharp', 
          \'coc-go',
          \'coc-sumneko-lua']

@@ -1,12 +1,7 @@
-local function vimIcon()
-  return [[勇]]
-end
-
-local function currentTime()
+local function time()
   local date_table = os.date("*t")
   local hour, minute, second = date_table.hour, date_table.min, date_table.sec
-  local result = string.format("%d:%d:%d", hour, minute, second)
-
+  local result = string.format("%02d:%02d:%02d", hour, minute, second)
   return result
 end
 
@@ -14,66 +9,45 @@ require('lualine').setup {
   options = {
     theme = 'tokyonight',
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     always_divide_middle = true,
     globalstatus = true,
   },
   sections = {
-    lualine_a = {
+    lualine_z = {
       {
-        vimIcon,
-        separator = {
-          left = ''
-        },
-        right_padding = 2,
+        time,
       },
     },
-    lualine_b = {
+    lualine_y = {
       {
         'branch',
         icon = '',
-        left_padding = 2,
-        separator = {
-          right = ''
-        },
       },
     },
-    lualine_c = { 'filesize' },
-    lualine_x = { 'searchcount' },
-    lualine_y = {
+    lualine_x = {
       {
-        --'mode',
-        'buffers',
-        show_filename_only = true,
-        hide_filename_extension = false,
-        show_modified_status = true,
-        separator = {
-          left = ''
-        },
-        symbols = {
-          modified = ' ●',
-          alternate_file = '',
-          directory = '',
-        },
+        'diff',
       },
     },
-    lualine_z = {
-      { 'location',
-        separator = {
-          right = ''
-        },
-        left_padding = 2,
+    lualine_c = { 'searchcount' },
+    lualine_b = {
+      {
+        'diagnostics',
+        always_visible = true,
       },
+    },
+    lualine_a = {
+      {
+        'filename',
+      },
+      {
+        'filetype',
+        colored = false,
+        icon_only = true,
+      },
+      'filesize',
     },
   },
-  --inactive_sections = {},
-  --tabline = {
-  --lualine_a = {},
-  --lualine_b = {},
-  --lualine_c = {},
-  --lualine_x = {},
-  --lualine_y = {},
-  --lualine_z = {},
-  --},
-  extensions = { 'fzf' },
+  extensions = { 'fzf','nerdtree' },
 }
