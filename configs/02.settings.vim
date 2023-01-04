@@ -13,14 +13,16 @@ set mouse=a "Click cursor
 set autoread
 
 "Move between tab in buffer
-map <silent><Leader>t <C-w>w
+nmap <silent><Leader>t <C-w>w
 "Select all file
-map <silent><Leader>a ggVG
+nmap <silent><Leader>a ggVG
 "Copy current selected
-map <silent><Leader>c "+y
+vmap <silent><Leader>c "+y
 "Save current file
 map <silent><Leader>s <cmd>silent! w<cr>
 "Quit vim
 map <silent>q :qa<cr>
 "No highlight file(after find, file will be highlight)
-map <silent><C-h> <cmd>silent! nohl<CR>
+nmap <silent><C-h> <cmd>silent! nohl<cr>
+" Back to previous file
+nmap <silent><BS> <cmd>silent! b#<cr>

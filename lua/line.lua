@@ -5,17 +5,17 @@ require('lualine').setup {
     section_separators = { left = '', right = '' },
     always_divide_middle = true,
     globalstatus = true,
-    --padding = 1,
   },
   sections = {
     lualine_z = {
       {
         'buffers',
         show_filename_only = true,
+        hide_filename_extension = false,
         show_modified_status = true,
         symbols = {
           modified = ' ●',
-          alternate_file = '#',
+          alternate_file = '# ',
           directory = '',
         },
       },
