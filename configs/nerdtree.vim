@@ -14,7 +14,7 @@ let NERDTreeIgnore=[
          \'yarn.lock', 
          \'.DS_Store',
          \'.git',]
-let g:NERDTreeWinSize=36    "Set width of tree
+let g:NERDTreeWinSize=42    "Set width of tree
 let NERDTreeShowHidden=1
 
 autocmd VimEnter * silent! NERDTree "Auto open nerdtree
