@@ -1,7 +1,7 @@
 {
 	"eslint.autoFixOnSave": true,
 	"eslint.format.enable": true,
-	"coc.preferences.messageLevel":"warning",
+	"coc.preferences.messageLevel": "warning",
 	"languageserver": {
 		"csharp-ls": {
 			"command": "csharp-ls",
@@ -15,6 +15,18 @@
 				".hg/"
 			]
 		}
-  },
-  "Lua.telemetry.enable": true
+	},
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-1.8",
+			"path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home"
+		}
+	],
+	"java.project.referencedLibraries": [
+		"/Users/Mac/.m2/repository/vn/vnpt/icode/ext.springframework.boot/1.0.0/ext.springframework.boot-1.0.0.jar",
+		"/Users/Mac/.m2/repository/vn/vnpt/icode/lib.common/1.0.0/lib.common-1.0.0.jar",
+		"/Users/Mac/.m2/repository/com/vnpt/local/0.0.1-SNAPSHOT/local-0.0.1-SNAPSHOT.jar",
+		"/Users/Mac/.m2/utils_libs/utils-libs.jar"
+	],
+	"Lua.telemetry.enable": true
 }

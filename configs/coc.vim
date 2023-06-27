@@ -27,7 +27,8 @@ let g:coc_global_extensions=[
          \'coc-json', 
          \'coc-omnisharp', 
          \'coc-go',
-         \'coc-sumneko-lua']
+         \'coc-sumneko-lua',
+         \'coc-java']
 
 "coc-css for scss file
 autocmd FileType scss setl iskeyword+=@-@
