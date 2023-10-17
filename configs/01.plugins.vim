@@ -15,9 +15,11 @@ Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
 Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'kdheepak/lazygit.nvim' "Open git ui
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 call plug#end()
 
-lua require('plugins')
-lua require('telescope-config')
-lua require('line')
-lua require('notice')
+"lua require('plugins')
+"lua require('telescope-config')
+"lua require('line')
+"lua require('notice')

@@ -1,7 +1,7 @@
 "Toggle nerd tree
-map <silent><C-n> <cmd>silent! NERDTreeToggle<cr>
+map <silent><C-n> <cmd>silent! NERDTreeToggle<CR>
 "Find file in nerd tree
-map <silent><C-f> <cmd>silent! NERDTreeFind<cr>
+map <silent><C-f> <cmd>silent! NERDTreeFind<CR>
 
 let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 " Don't show some folder in tree folder
