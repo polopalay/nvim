@@ -12,7 +12,5 @@ let g:mta_filetypes = {
          \'javascript': 1}	"File types enable auto close tag
 let g:floaterm_keymap_toggle = '<F12>'	"Map key to toggle terminal
 
-"Toggle comment
 map <silent><Leader>/ <plug>NERDCommenterToggle
-nnoremap <silent><leader>gg :silent! LazyGit<CR>
 

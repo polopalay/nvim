@@ -16,10 +16,5 @@ Plug 'sheerun/vim-polyglot'	"Color skin for language
 Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'kdheepak/lazygit.nvim' "Open git ui
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
-
-"lua require('plugins')
-"lua require('telescope-config')
-"lua require('line')
-"lua require('notice')

@@ -21,7 +21,7 @@ vmap <silent><Leader>c "+y
 "Save current file
 map <silent><Leader>s <cmd>silent! w<cr>
 "Quit vim
-map <silent>q :qa<cr>
+map <silent>q <cmd>qa<cr>
 "No highlight file(after find, file will be highlight)
 nmap <silent><C-h> <cmd>silent! nohl<cr>
 " Back to previous file
