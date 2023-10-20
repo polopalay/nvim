@@ -1,12 +1,9 @@
-"Toggle nerd tree
-map <silent><C-n> <cmd>silent! NERDTreeToggle<CR>
 "Find file in nerd tree
 map <silent><C-f> <cmd>silent! NERDTreeFind<CR>
 
 let NERDTreeShowLineNumbers=1	"Show line number for nerdtree
 let g:NERDTreeWinSize=45    "Set width of tree
 let NERDTreeShowHidden=1
-
 let NERDTreeIgnore=['.DS_Store']
 
 autocmd VimEnter * silent! NERDTree "Auto open nerdtree
