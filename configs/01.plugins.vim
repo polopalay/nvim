@@ -9,7 +9,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'raimondi/delimitmate'	"Auto close for quotes
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'sheerun/vim-polyglot'	"Color skin for language
-Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'nvim-lua/plenary.nvim'  "Libarary for some extendsion (etc: telescope)
 Plug 'nvim-telescope/telescope.nvim' "Find file, buffer
 call plug#end()
