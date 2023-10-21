@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Theme
+Plug 'folke/tokyonight.nvim' " Theme
 Plug 'preservim/nerdcommenter'	"Quick comment
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"Change color for tree folder
