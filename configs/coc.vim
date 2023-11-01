@@ -15,7 +15,6 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 let g:coc_global_extensions=[
          \'coc-pairs',
-         \'coc-git',
          \'coc-tsserver', 
          \'coc-eslint',
          \'coc-explorer', 

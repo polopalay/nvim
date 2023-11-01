@@ -2,7 +2,6 @@ let mapleader = " " " Map leader to Space
 " set vim background transparent
 hi! Normal ctermbg=NONE guibg=NONE 
 
-"set encoding=utf-8	"Set endcoding in vim is utf-8
 set number relativenumber	"Show current line number and distance to other line
 set cursorline	"Hightlight current line
 set nobackup    "Some servers have issues with backup files
