@@ -14,7 +14,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 let g:coc_global_extensions=[
-         \'coc-pairs',
          \'coc-tsserver', 
          \'coc-eslint',
          \'coc-explorer', 
@@ -27,5 +26,4 @@ let g:coc_global_extensions=[
          \'coc-sql',
          \'@yaegassy/coc-intelephense']
 
-"Set command :Format to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
