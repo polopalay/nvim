@@ -24,6 +24,7 @@ let g:coc_global_extensions=[
          \'coc-java',
          \'coc-xml',
          \'coc-sql',
-         \'@yaegassy/coc-intelephense']
+         \'@yaegassy/coc-intelephense',
+	 \'coc-jedi' ]
 
 command! -nargs=0 Format :call CocActionAsync('format')

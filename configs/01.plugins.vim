@@ -8,4 +8,5 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'voldikss/vim-floaterm'	"Terminal inside vim
 Plug 'nvim-lua/plenary.nvim'  "Libarary for some extendsion (etc: telescope)
 Plug 'nvim-telescope/telescope.nvim' "Find file, buffer
+Plug 'github/copilot.vim' "Auto complete
 call plug#end()
