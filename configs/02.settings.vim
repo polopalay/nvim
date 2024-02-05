@@ -1,6 +1,4 @@
 let mapleader = " " " Map leader to Space
-" set vim background transparent
-hi! Normal ctermbg=NONE guibg=NONE 
 
 set number relativenumber	"Show current line number and distance to other line
 set cursorline	"Hightlight current line
