@@ -1,7 +1,7 @@
 call plug#begin()
 "Plug 'ayu-theme/ayu-vim'
 Plug 'gmoe/vim-espresso'
-"Plug 'folke/tokyonight.nvim' " Theme
+Plug 'trusktr/seti.vim'
 Plug 'preservim/nerdcommenter'	"Quick comment
 Plug 'preservim/nerdtree'	"Display folder for tree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"Change color for tree folder

@@ -1,9 +1,7 @@
-"colorscheme tokyonight-storm
-"let ayucolor="mirage"
-"set termguicolors
-"colorscheme ayu
-
 colorscheme espresso
+"colorscheme ayu
+"set termguicolors
+"let ayucolor="mirage"
 " set vim background transparent
 hi! Normal ctermbg=NONE guibg=NONE 
 

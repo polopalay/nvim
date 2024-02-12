@@ -21,7 +21,6 @@ let g:coc_global_extensions=[
          \'coc-json', 
          \'coc-omnisharp', 
          \'coc-go',
-         \'coc-java',
          \'coc-xml',
          \'coc-sql',
          \'@yaegassy/coc-intelephense',
