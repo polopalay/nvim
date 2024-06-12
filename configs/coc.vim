@@ -20,10 +20,8 @@ let g:coc_global_extensions=[
          \'coc-html', 
          \'coc-json', 
          \'coc-omnisharp', 
-         \'coc-go',
          \'coc-xml',
-         \'coc-sql',
-         \'@yaegassy/coc-intelephense',
-	 \'coc-jedi' ]
+	 \'coc-jedi',
+	 \]
 
 command! -nargs=0 Format :call CocActionAsync('format')
