@@ -20,6 +20,7 @@ vmap <silent><Leader>c "+y
 map <silent><Leader>s <cmd>silent! w<cr>
 "No highlight file(after find, file will be highlight)
 nmap <silent><C-h> <cmd>silent! nohl<cr>
+nmap <silent><C-c> <cmd>silent! CopilotChat<cr>
 " Back to previous file
 nmap <silent><BS> <cmd>silent! b#<cr>
 map <silent><Leader>/ <plug>NERDCommenterToggle
