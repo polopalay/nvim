@@ -25,5 +25,5 @@ nmap <silent><C-c> <cmd>silent! CopilotChat<cr>
 nmap <silent><BS> <cmd>silent! b#<cr>
 map <silent><Leader>/ <plug>NERDCommenterToggle
 
-colorscheme espresso
+colorscheme catppuccin_latte
 hi! Normal ctermbg=NONE guibg=NONE 
