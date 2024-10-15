@@ -1,29 +1,25 @@
 let mapleader = " " " Map leader to Space
 
-set encoding=UTF-8
-set number relativenumber	"Show current line number and distance to other line
-set cursorline	"Hightlight current line
-set nobackup    "Some servers have issues with backup files
-set nowritebackup   "Some servers have issues with backup files
-set noswapfile  "Don't create swap file
-set mouse=a
-set autoread
-set nowrap
+set encoding=UTF-8 "The encoding displayed.
+set number relativenumber "Show current line number and distance to other line
+set cursorline "Hightlight current line
+set nobackup "Some servers have issues with backup files
+set nowritebackup "Some servers have issues with backup files
+set noswapfile "Don't create swap file
+set mouse=a "Enable mouse
+set autoread "Auto read file when file change
+set fileformats=unix,dos
 
-"Move between tab in buffer
+set tabstop=4
+set shiftwidth=4
+
 nmap <silent><Leader>t <C-w>w
-"Select all file
 nmap <silent><Leader>a ggVG
-"Copy current selected
 vmap <silent><Leader>c "+y
-"Save current file
-map <silent><Leader>s <cmd>silent! w<cr>
-"No highlight file(after find, file will be highlight)
+nmap <silent><Leader>s <cmd>silent! w<cr>
 nmap <silent><C-h> <cmd>silent! nohl<cr>
-nmap <silent><C-c> <cmd>silent! CopilotChat<cr>
-" Back to previous file
 nmap <silent><BS> <cmd>silent! b#<cr>
-map <silent><Leader>/ <plug>NERDCommenterToggle
+nmap <silent><Leader>/ <plug>NERDCommenterToggle
 
 colorscheme catppuccin_latte
 hi! Normal ctermbg=NONE guibg=NONE 

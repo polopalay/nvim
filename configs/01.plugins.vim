@@ -6,9 +6,4 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}		"Auto complete
 Plug 'nvim-lua/plenary.nvim'  "Libarary for some extendsion (etc: telescope)
 Plug 'nvim-telescope/telescope.nvim' "Find file, buffer
 Plug 'github/copilot.vim' "AI suggest code
-"Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }	"Chat with copilot
 call plug#end()
-
-"lua << EOF
-"require("CopilotChat").setup {}
-"EOF

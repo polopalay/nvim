@@ -14,14 +14,15 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 let g:coc_global_extensions=[
-         \'coc-tsserver', 
-         \'coc-eslint',
-         \'coc-explorer', 
-         \'coc-html', 
-         \'coc-json', 
-         \'coc-omnisharp', 
-         \'coc-xml',
-	 \'coc-jedi',
-	 \]
+        \'coc-tsserver', 
+        \'coc-eslint',
+        \'coc-explorer', 
+        \'coc-html', 
+        \'coc-json', 
+        \'coc-omnisharp', 
+        \'coc-xml',
+	\'coc-jedi',
+	\'@yaegassy/coc-black-formatter',
+	\]
 
-command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=0 Format silent call CocActionAsync('format')
