@@ -7,7 +7,7 @@ map <silent><leader>qf <Plug>(coc-fix-current)
 "Jump to definition of value or function
 map gd <cmd>silent! call CocActionAsync('jumpDefinition')<CR>
 "Rename of value
-map <silent><leader>n <Plug>(coc-rename)
+map <silent><leader>r <Plug>(coc-rename)
 "Show suggestion of coc
 inoremap <silent><expr> <c-space> coc#refresh()
 " Press enter to auto comple
@@ -21,8 +21,8 @@ let g:coc_global_extensions=[
         \'coc-json', 
         \'coc-omnisharp', 
         \'coc-xml',
-	\'coc-jedi',
-	\'@yaegassy/coc-black-formatter',
+		\'coc-jedi',
+		\'@yaegassy/coc-black-formatter',
 	\]
 
 command! -nargs=0 Format silent call CocActionAsync('format')
