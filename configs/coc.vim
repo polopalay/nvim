@@ -23,6 +23,7 @@ let g:coc_global_extensions=[
         \'coc-xml',
 		\'coc-jedi',
 		\'@yaegassy/coc-black-formatter',
+		\'coc-rust-analyzer'
 	\]
 
 command! -nargs=0 Format silent call CocActionAsync('format')
