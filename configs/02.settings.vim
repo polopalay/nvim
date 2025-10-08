@@ -9,6 +9,7 @@ set noswapfile "Don't create swap file
 set mouse=a "Enable mouse
 set autoread "Auto read file when file change
 set fileformats=unix,dos
+set nowrap
 
 set tabstop=4
 set shiftwidth=4
@@ -20,7 +21,7 @@ nmap <silent><Leader>s <cmd>silent! w<cr>
 nmap <silent><C-h> <cmd>silent! nohl<cr>
 nmap <silent><BS> <cmd>silent! b#<cr>
 "nmap <silent><Tab> :bprevious<CR>
-nmap <silent><Leader>/ <plug>NERDCommenterToggle
+map <silent><Leader>/ <plug>NERDCommenterToggle
 
 colorscheme catppuccin_latte
 hi! Normal ctermbg=NONE guibg=NONE 
