@@ -1,6 +1,8 @@
 # Setting
 ![ghibli avatar](assets/avatar.jpeg)
 
+---
+
 ## Prerequisites
 Chạy lệnh `brew install nvim` để cài neovim
 Chạy lệnh `brew install ripgrep` để có thể tìm kiếm nội dung file bằng telescope
