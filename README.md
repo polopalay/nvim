@@ -1,5 +1,5 @@
 # Setting
-![Extension cho coc.nvim](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+![ghibli avatar](assets/avatar.jpeg)
 
 ## Prerequisites
 Chạy lệnh `brew install nvim` để cài neovim
