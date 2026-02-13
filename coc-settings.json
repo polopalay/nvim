@@ -1,22 +1,11 @@
 {
-	"eslint.autoFixOnSave": true,
-	"eslint.format.enable": true,
-	"coc.preferences.messageLevel": "warning",
-	"languageserver": {
-		"csharp-ls": {
-			"command": "csharp-ls",
-			"filetypes": [
-				"cs"
-			],
-			"rootPatterns": [
-				"*.csproj",
-				".vim/",
-				".git/",
-				".hg/"
-			]
-		}
-	},
+	"python.formatting.provider": "black",
+	"python.formatting.blackPath": "black",
 	"rust-analyzer.inlayHints.bindingModeHints.enable": false,
 	"rust-analyzer.inlayHints.chainingHints.enable": false,
-	"rust-analyzer.inlayHints.closingBraceHints.enable": false
+	"rust-analyzer.inlayHints.closingBraceHints.enable": false,
+	"eslint.format.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
 }

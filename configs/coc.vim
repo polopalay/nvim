@@ -19,11 +19,9 @@ let g:coc_global_extensions=[
         \'coc-explorer', 
         \'coc-html', 
         \'coc-json', 
-        \'coc-omnisharp', 
         \'coc-xml',
-		\'coc-jedi',
-		\'@yaegassy/coc-black-formatter',
-		\'coc-rust-analyzer'
+		\'coc-pyright',
+		\'coc-rust-analyzer',
 	\]
 
 command! -nargs=0 Format silent call CocActionAsync('format')
