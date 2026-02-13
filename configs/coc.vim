@@ -18,6 +18,7 @@ let g:coc_global_extensions=[
         \'coc-eslint',
         \'coc-explorer', 
         \'coc-html', 
+        \'coc-css', 
         \'coc-json', 
         \'coc-xml',
 		\'coc-pyright',
