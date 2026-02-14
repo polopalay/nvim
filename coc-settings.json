@@ -1,6 +1,7 @@
 {
 	"python.formatting.provider": "black",
 	"python.formatting.blackPath": "black",
+	"workspace.workspaceFolderFallbackCwd": true,
 	"rust-analyzer.inlayHints.bindingModeHints.enable": false,
 	"rust-analyzer.inlayHints.chainingHints.enable": false,
 	"rust-analyzer.inlayHints.closingBraceHints.enable": false,
