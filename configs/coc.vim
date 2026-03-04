@@ -22,6 +22,7 @@ let g:coc_global_extensions=[
         \'coc-json', 
         \'coc-xml',
 		\'coc-pyright',
+		\'coc-java',
 		\'coc-rust-analyzer',
 	\]
 

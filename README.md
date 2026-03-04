@@ -77,4 +77,4 @@ Nhớ thêm config cho eslint trong coc-settings.json
 
 ### Rust development
 Thêm đoạn `\'coc-rust-analyzer',` vào coc_global_extensions trong coc.vim để hỗ trợ rust
-
+Chạy lệnh `rustup component add rustfmt` để cài formatter cho rust
