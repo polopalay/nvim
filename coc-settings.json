@@ -8,5 +8,19 @@
 	"eslint.format.enable": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
+	},
+	"languageserver": {
+		"csharp-ls": {
+			"command": "csharp-ls",
+			"filetypes": [
+				"cs"
+			],
+			"rootPatterns": [
+				"*.csproj",
+				".vim/",
+				".git/",
+				".hg/"
+			]
+		}
 	}
 }

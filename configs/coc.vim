@@ -24,6 +24,7 @@ let g:coc_global_extensions=[
 		\'coc-pyright',
 		\'coc-java',
 		\'coc-rust-analyzer',
+		\'coc-omnisharp',
 	\]
 
 command! -nargs=0 Format silent call CocActionAsync('format')
