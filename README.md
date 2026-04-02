@@ -36,7 +36,13 @@ Thêm đoạn này vào coc-settings.json
        },
 
 Chạy lệnh `dotnet tool install --global csharp-ls` để dùng omnisharp cho cocnvim
-
+Dotnet thường dùng là 8.0, nên chạy dotnet `tool install --global csharp-ls --version 0.16.0`
+Nhớ set:
+```
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet@8/libexec"
+export PATH="$PATH:$DOTNET_ROOT:$HOME/.dotnet/tools"
+ở .zshrc hoặc .bash_profile để có thể chạy csharp-ls
+```
 ---
 
 ## Python development
@@ -59,6 +65,11 @@ Thêm `\'coc-json',` vào coc_global_extensions trong coc.vim để hỗ trợ j
 
 ### Java development
 Thêm đoạn `\'coc-java',` vào coc_global_extensions trong coc.vim
+Set JAVA_HOME trong .zshrc hoặc .bash_profile
+```
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH="$JAVA_HOME/bin:$PATH"
+```
 
 ---
 
