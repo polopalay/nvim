@@ -1,4 +1,4 @@
-# Setting
+# Cấu hình cơ bản cho NeoVim
 
 ---
 
