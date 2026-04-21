@@ -2,8 +2,8 @@ map <silent><C-f> <cmd>silent! NERDTreeFind<CR>
 map <silent><C-t> :NERDTreeToggle<CR>
 
 let g:NERDTreeWinSize=40
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['.DS_Store', '__pycache__', 'bin', 'obj', '.git', '.localized', 'node_modules']
+let NERDTreeShowHidden=0
+let NERDTreeIgnore=['__pycache__', 'bin', 'obj', 'node_modules']
 
 autocmd VimEnter * silent! NERDTree "Auto open nerdtree
 autocmd VimEnter * wincmd p "Auto switch to document after auto open nerdtree
