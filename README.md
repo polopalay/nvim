@@ -10,6 +10,31 @@ Cần có nodejs để chạy coc.nvim chạy `brew install node, cần thiết 
 ```bash
 export PATH="/opt/homebrew/opt/node/bin:$PATH"
 ```
+Cài vim-plug để quản lý extension
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+Để dễ dàng cho thao tác, nên có thêm cả ohmyzsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+Cài thêm cả extension
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+Cấu hình cơ bản
+```bash
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git dotnet zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+```
+Có 1 vài extension hoặc tool cần đến python, nên cài thêm vitrual env
+```bash
+sudo apt update && sudo apt install -y python3-pip python3-venv
+python3 -m venv venv
+```
 
 ## Các tiện ích của coc.nvim
 Thêm `\'coc-explorer',` vào coc_global_extensions trong coc.vim để có file explorer

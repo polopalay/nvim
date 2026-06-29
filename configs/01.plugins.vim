@@ -6,4 +6,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}		"Auto complete
 Plug 'nvim-lua/plenary.nvim'  "Libarary for some extendsion (etc: telescope)
 Plug 'nvim-telescope/telescope.nvim' "Find file, buffer
 Plug 'github/copilot.vim' "AI suggest code
+Plug 'polopalay/excel.vim' "Excel reader and editor
+Plug 'polopalay/docx.vim' "Excel reader and editor
 call plug#end()
+
+"exe 'source' glob('~/Documents/Git/excel.vim/plugin/excel.vim')
+"exe 'source' glob('~/Documents/Git/docx.vim/plugin/docx.vim')
